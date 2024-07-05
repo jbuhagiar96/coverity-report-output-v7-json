@@ -117,6 +117,7 @@ async function run(): Promise<void> {
           info(`Found ${coverityIssues.issues.length} Coverity issues.`)
       }catch (error){
         info('Error : Unable to open and parse the Coverity results output file : File is empty or its an invalid json file.')
+	info((error as Error).message)
         process.exit(1);
     }
   }
